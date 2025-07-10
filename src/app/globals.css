@@ -171,3 +171,12 @@ body {
     letter-spacing: var(--tracking-normal);
   }
 }
+
+
+
+/* Override highlight.js background */
+.hljs,
+.hljs pre,
+.hljs code {
+  background: transparent !important;
+}

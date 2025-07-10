@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { ConvexClientProvider } from "@/components/convex-client-provider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -27,8 +28,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <div className="absolute inset-0 -z-10 w-full min-h-full h-full bg-background dark:bg-[radial-gradient(#2b2a29_1px,transparent_1px)] bg-[radial-gradient(#edeef0_1px,transparent_1px)] [background-size:16px_16px]" /> */}
-          {children}
+          <ConvexClientProvider>
+            {/* <div className="absolute inset-0 -z-10 w-full min-h-full h-full bg-background dark:bg-[radial-gradient(#2b2a29_1px,transparent_1px)] bg-[radial-gradient(#edeef0_1px,transparent_1px)] [background-size:16px_16px]" /> */}
+            {children}
+          </ConvexClientProvider>
         </ThemeProvider>
       </body>
     </html>

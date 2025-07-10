@@ -137,7 +137,7 @@ export const ChatSidebar = ({
             >
               <a href="#">
                 <IconInnerShadowTop className="!size-5" />
-                <span className="text-base font-semibold">Acme Inc.</span>
+                <span className="text-base font-semibold">Vanguox</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -148,7 +148,7 @@ export const ChatSidebar = ({
         <ChatSidebarSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser />
       </SidebarFooter>
     </Sidebar>
   );
