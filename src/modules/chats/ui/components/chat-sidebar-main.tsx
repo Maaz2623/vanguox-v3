@@ -30,7 +30,7 @@ export const NavMain = ({
             <SidebarMenuButton
               onClick={() => router.push(`/`)}
               tooltip="New Instance"
-              className="bg-primary text-center flex justify-center items-center text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground min-w-8 duration-200 ease-linear"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground min-w-8 duration-200 ease-linear"
             >
               <IconCirclePlusFilled />
               <span>New Instance</span>
