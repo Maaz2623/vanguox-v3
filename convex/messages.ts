@@ -13,12 +13,13 @@ import { ASSISTANT_PROMPT } from "@/prompt";
 
 
 export const agent = new Agent(components.agent, {
-  chat: google("gemini-2.0-flash"),
+  chat: google("gemini-2.0-flash", {
+    useSearchGrounding: true,
+    
+  }),
   textEmbedding: google.textEmbeddingModel("text-embedding-004"),
   instructions: ASSISTANT_PROMPT,
 });
-
-
 
 // ✅ Query: List messages and create thread if needed
 export const listThreadMessages = query({
