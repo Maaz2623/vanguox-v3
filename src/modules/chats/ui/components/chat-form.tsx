@@ -5,7 +5,7 @@ import TextAreaAutoSize from "react-textarea-autosize";
 
 export const ChatForm = () => {
   return (
-    <div className="rounded-lg bg-neutral-700 overflow-hidden p-2">
+    <div className="rounded-lg bg-neutral-200 dark:bg-neutral-700 overflow-hidden p-2">
       <TextAreaAutoSize
         minRows={1}
         rows={1}
