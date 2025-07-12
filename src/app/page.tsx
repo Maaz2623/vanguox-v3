@@ -19,16 +19,16 @@ const HomePage = async () => {
 
   return (
     <SidebarProvider
-      className="bg-sidebar"
-      style={
-        {
-          "--sidebar-width": "calc(var(--spacing) * 72)",
-          "--header-height": "calc(var(--spacing) * 12)",
-        } as React.CSSProperties
-      }
+      className="bg-neutral-900! p-0!"
+      // style={
+      //   {
+      //     "--sidebar-width": "calc(var(--spacing) * 72)",
+      //     "--header-height": "calc(var(--spacing) * 12)",
+      //   } as React.CSSProperties
+      // }
     >
-      <ChatSidebar variant="inset" />
-      <SidebarInset className="flex flex-col  ">
+      <ChatSidebar variant="inset" className="border-r border-neutral-800" />
+      <SidebarInset className="flex flex-col shadow-none! ">
         <SiteHeader />
         <div className="flex-1 p-2">
           <div className="flex flex-col h-full gap-y-4 p-5 justify-center items-center">

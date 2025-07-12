@@ -53,7 +53,7 @@ export const MessagesList = ({ chatId }: { chatId: string }) => {
 
   return (
     <ScrollArea className="h-[580px] pb-24 max-h-full px-22 mx-auto overflow-y-auto flex flex-col">
-      <div className="flex flex-col gap-y-4 ">
+      <div className="flex flex-col pt-10 gap-y-4 ">
         {formattedMessages.map((message) => {
           if (lastMessage.role === "assistant") {
             console.log(freshAssistantMessageId, lastMessage.id);
