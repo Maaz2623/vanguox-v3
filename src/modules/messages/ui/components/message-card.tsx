@@ -8,6 +8,13 @@ import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/atom-one-dark.css"; // or any other theme like atom-one-dark
+import { Button } from "@/components/ui/button";
+import { CopyIcon, Share2Icon } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 interface MessagesCardProps {
   role: "user" | "assistant" | "tool" | "system" | undefined;
@@ -29,8 +36,8 @@ export const MessagesCard = ({
 
 const UserMessage = ({ content }: { content: string }) => {
   return (
-    <div className="w-full flex justify-end text-[15px]">
-      <Card className="shadow-none w-fit max-w-[60%] p-4 bg-[#3e4bbb] text-white border-none">
+    <div className="w-full flex justify-end text-[15px] pr-8">
+      <Card className="shadow-none w-fit max-w-[60%] py-2 px-4 rounded-md! bg-primary/30 text-white border-primary/30">
         {content}
       </Card>
     </div>
@@ -67,7 +74,11 @@ const AssistantMessage = ({
       </div>
 
       <div className="w-full flex justify-start flex-col gap-y-2">
-        <Card className="shadow-none bg-neutral-700 text-[15px] w-fit p-5 border-none animate-fade-in max-w-[600px]">
+        <Card
+          className={cn(
+            "shadow-none text-[15px] w-fit p-5 border-none animate-fade-in max-w-[600px]"
+          )}
+        >
           {/* {isTypewriter ? (
             <Typewriter typeSpeed={10} words={[content]} />
           ) : ( */}
@@ -76,16 +87,16 @@ const AssistantMessage = ({
             rehypePlugins={[rehypeRaw, rehypeHighlight]}
             components={{
               h1: (props) => (
-                <h1 className="text-2xl font-bold my-5" {...props} />
+                <h1 className="text-2xl font-bold my-3" {...props} />
               ),
               h2: (props) => (
-                <h2 className="text-xl font-semibold my-4" {...props} />
+                <h2 className="text-xl font-semibold my-2" {...props} />
               ),
               h3: (props) => (
                 <h3 className="text-lg font-semibold mb-2" {...props} />
               ),
               ul: (props) => (
-                <ul className="list-disc pl-6 space-y-1 mb-8" {...props} />
+                <ul className="list-disc pl-6 space-y-1 mb-4" {...props} />
               ),
               ol: (props) => (
                 <ol
@@ -125,6 +136,24 @@ const AssistantMessage = ({
           </Markdown>
           {/* )} */}
         </Card>
+      </div>
+      <div className="h-10 mt-2 transition-all duration-300">
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button variant={`ghost`} size={`icon`} className="cursor-pointer">
+              <CopyIcon />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>Copy text</TooltipContent>
+        </Tooltip>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button variant={`ghost`} size={`icon`} className="cursor-pointer">
+              <Share2Icon />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>Share link</TooltipContent>
+        </Tooltip>
       </div>
     </div>
   );

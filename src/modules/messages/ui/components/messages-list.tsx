@@ -29,6 +29,7 @@ export const MessagesList = ({ chatId }: { chatId: string }) => {
     content: message.message?.content,
     id: message._id,
   }));
+
   const lastMessage = formattedMessages[formattedMessages.length - 1];
   const isLastMessageUser = lastMessage?.role === "user";
 
@@ -51,7 +52,7 @@ export const MessagesList = ({ chatId }: { chatId: string }) => {
   }
 
   return (
-    <ScrollArea className="h-[420px] max-h-full overflow-y-auto pr-8 flex flex-col">
+    <ScrollArea className="h-[580px] pb-24 max-h-full px-22 mx-auto overflow-y-auto flex flex-col">
       <div className="flex flex-col gap-y-4 ">
         {formattedMessages.map((message) => {
           if (lastMessage.role === "assistant") {

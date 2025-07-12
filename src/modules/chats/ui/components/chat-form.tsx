@@ -98,7 +98,7 @@ export const ChatForm = ({ chatId, userId }: Props) => {
   const isDisabled = !form.formState.isValid;
 
   return (
-    <div className="rounded-lg bg-neutral-700 overflow-hidden p-2">
+    <div className="rounded-lg mx-14 bg-neutral-800 border overflow-hidden p-2">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <FormField
@@ -110,7 +110,7 @@ export const ChatForm = ({ chatId, userId }: Props) => {
                 minRows={1}
                 rows={1}
                 maxRows={1}
-                className="p-4 resize-none border-none w-full outline-none bg-transparent"
+                className="p-4 resize-none text-sm border-none w-full outline-none bg-transparent"
                 placeholder="What would you like to build?"
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
